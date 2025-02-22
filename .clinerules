@@ -1,0 +1,120 @@
+# JasaGo Project Rules & Patterns
+
+## Project Structure Patterns
+
+1. **Route Organization**
+   - Auth routes under `/auth/{role}`
+   - Dashboard routes under `/dashboard/{role}`
+   - Role-specific components in respective directories
+
+2. **Component Patterns**
+   - UI components from shadcn/ui in `components/ui/`
+   - Custom components at root of `components/`
+   - Hooks in `hooks/` directory
+   - Utilities in `lib/` directory
+
+3. **File Naming**
+   - React components: PascalCase
+   - Hooks: camelCase with 'use' prefix
+   - Utilities: camelCase
+   - Pages: page.tsx in respective directories
+
+## Coding Standards
+
+1. **TypeScript Usage**
+   - Strict type checking enabled
+   - Interface over type when possible
+   - Explicit return types on functions
+   - Props interfaces for components
+
+2. **Component Structure**
+   - Server components by default
+   - 'use client' directive when needed
+   - Props interface before component
+   - Export at declaration
+
+3. **Styling Approach**
+   - Tailwind classes preferred
+   - Class ordering: layout -> spacing -> typography -> visual
+   - Consistent spacing units
+   - Mobile-first responsive design
+
+## Implementation Patterns
+
+1. **Authentication**
+   - Separate flows per role
+   - Protected route patterns
+   - Session management approach
+   - Role-based access control
+
+2. **Dashboard Features**
+   - Role-specific layouts
+   - Consistent navigation pattern
+   - Shared components across roles
+   - Data fetching strategies
+
+3. **Error Handling**
+   - Consistent error message format
+   - Loading state management
+   - Error boundary implementation
+   - Form validation patterns
+
+## Development Workflow
+
+1. **Code Organization**
+   - Feature-first organization
+   - Shared utilities in lib/
+   - Type definitions near usage
+   - Clear component boundaries
+
+2. **Testing Strategy**
+   - Component testing patterns
+   - Integration test coverage
+   - E2E test scenarios
+   - Mock data structure
+
+3. **Performance Considerations**
+   - Image optimization usage
+   - Component code splitting
+   - Data fetching patterns
+   - Caching strategies
+
+## Learned Patterns
+
+1. **Project Preferences**
+   - Role-based architecture
+   - Strict TypeScript usage
+   - Component modularity
+   - Mobile-first development
+
+2. **Implementation Insights**
+   - Auth flow separation
+   - Dashboard organization
+   - Component reuse patterns
+   - State management approach
+
+3. **Technical Decisions**
+   - Next.js App Router usage
+   - shadcn/ui integration
+   - Tailwind styling
+   - TypeScript configuration
+
+## Notes & Observations
+
+1. **Key Insights**
+   - Role-based routing provides clear separation
+   - shadcn/ui components highly customizable
+   - Mobile hooks improve responsive development
+   - TypeScript enhances development experience
+
+2. **Challenges & Solutions**
+   - Auth flow complexity handled by role separation
+   - Component reuse maximized through proper organization
+   - Mobile responsiveness through custom hooks
+   - Type safety through consistent patterns
+
+3. **Future Considerations**
+   - Scale authentication system
+   - Enhance dashboard features
+   - Improve component reusability
+   - Optimize performance

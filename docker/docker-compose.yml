@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: jasago-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: jasago
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - jasago-network
+
+  # pgadmin을 추가하여 데이터베이스 관리를 용이하게 합니다
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: jasago-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - jasago-network
+    depends_on:
+      - postgres
+
+networks:
+  jasago-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
